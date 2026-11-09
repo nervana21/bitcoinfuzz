@@ -1,0 +1,14 @@
+[package]
+name = "rbitcoin_lib"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+name = "rbitcoin_lib"
+crate-type = ["staticlib"]
+
+[dependencies]
+# Path resolved via modules/rbitcoin/Makefile symlink/clone into external/rbitcoin.
+bitcoin = { version = "0.32.102", default-features = true }
+rbitcoin-consensus = { path = "../../../external/rbitcoin/crates/rbitcoin-consensus", default-features = false }

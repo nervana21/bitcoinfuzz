@@ -1,0 +1,4 @@
+*.o
+*.a
+poc_smoke
+rbitcoin_lib/target/
