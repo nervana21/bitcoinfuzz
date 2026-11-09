@@ -4,7 +4,7 @@ CXXFLAGS += -Wall -Wextra -std=c++20 -fsanitize=address,fuzzer-no-link -O1 -I ..
 
 SYMBOL_PREFIX ?= variant
 BITCOIN_DIR := bitcoin
-BITCOIN_URL := https://github.com/bitcoin/bitcoin.git
+BITCOIN_URL ?= https://github.com/bitcoin/bitcoin.git
 BITCOINKERNEL_REFERENCE_DIR := ../bitcoinkernel/bitcoin
 BITCOINKERNEL_WAIT_TIMEOUT_SECS ?= 60
 BITCOINKERNEL_WAIT_INTERVAL_SECS ?= 2
@@ -98,6 +98,7 @@ bitcoin-sync: wait-bitcoin-reference-repo
 		echo "Cloning Bitcoin Core repository with reference $(BITCOINKERNEL_REFERENCE_DIR)..."; \
 		git clone --reference "$(BITCOINKERNEL_REFERENCE_DIR)" "$(BITCOIN_URL)" "$(BITCOIN_DIR)"; \
 	fi
+	@git -C "$(BITCOIN_DIR)" remote set-url origin "$(BITCOIN_URL)"
 	@current_commit="$$(git -C "$(BITCOIN_DIR)" rev-parse --verify -q HEAD 2>/dev/null || true)"; \
 	if [ "$$current_commit" = "$(BITCOINKERNEL_VARIANT_REF)" ]; then \
 		echo "Bitcoin Core already at commit $(BITCOINKERNEL_VARIANT_REF); skipping fetch/checkout."; \
