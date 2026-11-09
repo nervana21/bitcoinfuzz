@@ -33,7 +33,7 @@ services:
       tags:
         - bitcoinfuzz:script_eval
       args:
-        CXXFLAGS: "-DBITCOIN_CORE -DNBITCOIN -DGOCOIN -DLIBBITCOIN_SYSTEM"
+        CXXFLAGS: "-DBITCOIN_CORE -DNBITCOIN -DGOCOIN -DLIBBITCOIN_SYSTEM -DRBITCOIN"
         FUZZ: script_eval
     env_file: .env
     environment:
@@ -61,7 +61,7 @@ services:
       tags:
         - bitcoinfuzz:verify_script
       args:
-        CXXFLAGS: "-DBITCOIN_CORE -DBTCD -DGOCOIN -DNBITCOIN -DLIBBITCOIN_SYSTEM"
+        CXXFLAGS: "-DBITCOIN_CORE -DBTCD -DGOCOIN -DNBITCOIN -DLIBBITCOIN_SYSTEM -DRBITCOIN"
         FUZZ: verify_script
     env_file: .env
     environment:

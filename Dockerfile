@@ -51,7 +51,8 @@ RUN --mount=type=cache,target=/var/cache/apt,id=fuzz-apt-cache-builder \
 RUN curl -sSfL https://go.dev/dl/go1.26.10.linux-amd64.tar.gz | tar -C /usr/local -xz
 ENV PATH="/usr/local/go/bin:$PATH"
 # Keep Rust nightly scoped to the builder image instead of mutating a host toolchain.
-RUN rustup set profile minimal && rustup default nightly
+# 1.95.0 matches rbitcoin's rust-toolchain.toml for modules/rbitcoin.
+RUN rustup set profile minimal && rustup default nightly && rustup toolchain install 1.95.0
 # Install .NET SDK 10.0 using Microsoft's install script
 # See https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script
 RUN curl -sSf -L -o dotnet-install.sh https://dot.net/v1/dotnet-install.sh && \
