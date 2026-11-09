@@ -20,6 +20,9 @@ corpus/
 # Repos fetched in build time
 /modules/bitcoinkernel/bitcoin/
 /modules/bitcoinkernelvariant/bitcoin/
+/external/rbitcoin
+/external/rbitcoin/
+/.local-bin/
 
 # Docker
 docker/

@@ -112,6 +112,7 @@ contains the module-specific build commands, dependencies, and notes.
 | [embit](https://github.com/diybitcoinhardware/embit) | `EMBIT` | [modules/embit/README.md](./modules/embit/README.md) |
 | [gocoin](https://github.com/piotrnar/gocoin) | `GOCOIN` | [modules/gocoin/README.md](./modules/gocoin/README.md) |
 | [libbitcoin-system](https://github.com/libbitcoin/libbitcoin-system) | `LIBBITCOIN_SYSTEM` | [modules/libbitcoinsystem/README.md](./modules/libbitcoinsystem/README.md) |
+| [rbitcoin](https://github.com/rbitcoin-org/rbitcoin) | `RBITCOIN` | [modules/rbitcoin/README.md](./modules/rbitcoin/README.md) |
 | [libwally-core](https://github.com/ElementsProject/libwally-core) | `LIBWALLY_CORE` | [modules/libwallycore/README.md](./modules/libwallycore/README.md) |
 | [NBitcoin](https://github.com/MetacoSA/NBitcoin) | `NBITCOIN` | [modules/nbitcoin/README.md](./modules/nbitcoin/README.md) |
 | [py-bitcoinkernel](https://github.com/stickies-v/py-bitcoinkernel) | `PYBITCOINKERNEL` | [modules/pybitcoinkernel/README.md](./modules/pybitcoinkernel/README.md) |

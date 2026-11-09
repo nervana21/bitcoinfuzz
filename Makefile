@@ -208,6 +208,10 @@ ifneq ($(findstring -DLIBBITCOIN_SYSTEM,$(BASE_CXXFLAGS) $(CXXFLAGS)),)
 	LIBBITCOIN_LDLIBS   := -L$(BOOST_ROOT)/lib -lboost_program_options
 endif
 
+ifneq ($(findstring -DRBITCOIN,$(BASE_CXXFLAGS) $(CXXFLAGS)),)
+	MODULES += modules/rbitcoin/module.a
+endif
+
 CXXFLAGS := $(BASE_CXXFLAGS) $(JAVA_CXXFLAGS) $(CXXFLAGS) $(PYTHON_LDFLAGS) $(LIBBITCOIN_CXXFLAGS)
 
 bitcoinfuzz: main.cpp driver.h driver.o $(BITCOINFUZZ_OBJS) $(JVM_HELPERS) $(PYTHON_HELPERS)

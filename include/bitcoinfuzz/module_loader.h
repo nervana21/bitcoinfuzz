@@ -152,6 +152,10 @@ extern "C" __attribute__((weak)) void __lsan_ignore_object(const void *p);
 #include <modules/libbitcoinsystem/module.h>
 #endif
 
+#ifdef RBITCOIN
+#include <modules/rbitcoin/module.h>
+#endif
+
 #ifdef RUST_MUSIG2
 #include <modules/rustmusig2/module.h>
 #endif
